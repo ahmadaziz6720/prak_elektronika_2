@@ -1,0 +1,210 @@
+Circuit: * C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\Prak Elka 2\Rangkaian LTSpice\Percobaan 2 Umpan Balik\Perc-02-03-gabung.asc
+
+Early termination of direct N-R iteration.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Increasing initial diagonal Gmin to 100
+Increasing initial diagonal Gmin to 1000
+Gmin = 1000
+vernier = 0.5
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+Gmin = 836.601
+vernier = 0.03125
+vernier = 0.015625
+vernier = 0.0078125
+vernier = 0.00390625
+Gmin = 822.125
+vernier = 0.00195313
+vernier = 0.000976563
+vernier = 0.000488281
+Gmin = 0
+Gmin = 0
+Gmin stepping failed
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+Ignoring empty pin current: Ix(opamp:1)
+Ignoring empty pin current: Ix(opamp:2)
+Ignoring empty pin current: Ix(opamp:3)
+Ignoring empty pin current: Ix(opamp:4)
+Ignoring empty pin current: Ix(opamp:5)
+Ignoring empty pin current: Ix(x1:inn)
+Ignoring empty pin current: Ix(x1:inp)
+Ignoring empty pin current: Ix(x1:vp)
+Ignoring empty pin current: Ix(x1:vn)
+Ignoring empty pin current: Ix(x1:out)
+Ignoring empty pin current: Ix(x2:inn)
+Ignoring empty pin current: Ix(x2:inp)
+Ignoring empty pin current: Ix(x2:vp)
+Ignoring empty pin current: Ix(x2:vn)
+Ignoring empty pin current: Ix(x2:out)
+Ignoring empty pin current: Ix(x3:inn)
+Ignoring empty pin current: Ix(x3:inp)
+Ignoring empty pin current: Ix(x3:vp)
+Ignoring empty pin current: Ix(x3:vn)
+Ignoring empty pin current: Ix(x3:out)
+Ignoring empty pin current: Ix(x4:inn)
+Ignoring empty pin current: Ix(x4:inp)
+Ignoring empty pin current: Ix(x4:vp)
+Ignoring empty pin current: Ix(x4:vn)
+Ignoring empty pin current: Ix(x4:out)
+Ignoring empty pin current: Ix(x5:inn)
+Ignoring empty pin current: Ix(x5:inp)
+Ignoring empty pin current: Ix(x5:vp)
+Ignoring empty pin current: Ix(x5:vn)
+Ignoring empty pin current: Ix(x5:out)
+Ignoring empty pin current: Ix(x6:inn)
+Ignoring empty pin current: Ix(x6:inp)
+Ignoring empty pin current: Ix(x6:vp)
+Ignoring empty pin current: Ix(x6:vn)
+Ignoring empty pin current: Ix(x6:out)
+Ignoring empty pin current: Ix(x7:inn)
+Ignoring empty pin current: Ix(x7:inp)
+Ignoring empty pin current: Ix(x7:vp)
+Ignoring empty pin current: Ix(x7:vn)
+Ignoring empty pin current: Ix(x7:out)
+Ignoring empty pin current: Ix(x8:inn)
+Ignoring empty pin current: Ix(x8:inp)
+Ignoring empty pin current: Ix(x8:vp)
+Ignoring empty pin current: Ix(x8:vn)
+Ignoring empty pin current: Ix(x8:out)
+Ignoring empty pin current: Ix(x9:inn)
+Ignoring empty pin current: Ix(x9:inp)
+Ignoring empty pin current: Ix(x9:vp)
+Ignoring empty pin current: Ix(x9:vn)
+Ignoring empty pin current: Ix(x9:out)
+Ignoring empty pin current: Ix(x10:inn)
+Ignoring empty pin current: Ix(x10:inp)
+Ignoring empty pin current: Ix(x10:vp)
+Ignoring empty pin current: Ix(x10:vn)
+Ignoring empty pin current: Ix(x10:out)
+Ignoring empty pin current: Ix(x11:inn)
+Ignoring empty pin current: Ix(x11:inp)
+Ignoring empty pin current: Ix(x11:vp)
+Ignoring empty pin current: Ix(x11:vn)
+Ignoring empty pin current: Ix(x11:out)
+Ignoring empty pin current: Ix(x12:inn)
+Ignoring empty pin current: Ix(x12:inp)
+Ignoring empty pin current: Ix(x12:vp)
+Ignoring empty pin current: Ix(x12:vn)
+Ignoring empty pin current: Ix(x12:out)
+Ignoring empty pin current: Ix(x13:inn)
+Ignoring empty pin current: Ix(x13:inp)
+Ignoring empty pin current: Ix(x13:vp)
+Ignoring empty pin current: Ix(x13:vn)
+Ignoring empty pin current: Ix(x13:out)
+Ignoring empty pin current: Ix(x14:inn)
+Ignoring empty pin current: Ix(x14:inp)
+Ignoring empty pin current: Ix(x14:vp)
+Ignoring empty pin current: Ix(x14:vn)
+Ignoring empty pin current: Ix(x14:out)
+Ignoring empty pin current: Ix(x15:inn)
+Ignoring empty pin current: Ix(x15:inp)
+Ignoring empty pin current: Ix(x15:vp)
+Ignoring empty pin current: Ix(x15:vn)
+Ignoring empty pin current: Ix(x15:out)
+Ignoring empty pin current: Ix(opamp:1)
+Ignoring empty pin current: Ix(opamp:2)
+Ignoring empty pin current: Ix(opamp:3)
+Ignoring empty pin current: Ix(opamp:4)
+Ignoring empty pin current: Ix(opamp:5)
+Ignoring empty pin current: Ix(x1:inn)
+Ignoring empty pin current: Ix(x1:inp)
+Ignoring empty pin current: Ix(x1:vp)
+Ignoring empty pin current: Ix(x1:vn)
+Ignoring empty pin current: Ix(x1:out)
+Ignoring empty pin current: Ix(x2:inn)
+Ignoring empty pin current: Ix(x2:inp)
+Ignoring empty pin current: Ix(x2:vp)
+Ignoring empty pin current: Ix(x2:vn)
+Ignoring empty pin current: Ix(x2:out)
+Ignoring empty pin current: Ix(x3:inn)
+Ignoring empty pin current: Ix(x3:inp)
+Ignoring empty pin current: Ix(x3:vp)
+Ignoring empty pin current: Ix(x3:vn)
+Ignoring empty pin current: Ix(x3:out)
+Ignoring empty pin current: Ix(x4:inn)
+Ignoring empty pin current: Ix(x4:inp)
+Ignoring empty pin current: Ix(x4:vp)
+Ignoring empty pin current: Ix(x4:vn)
+Ignoring empty pin current: Ix(x4:out)
+Ignoring empty pin current: Ix(x5:inn)
+Ignoring empty pin current: Ix(x5:inp)
+Ignoring empty pin current: Ix(x5:vp)
+Ignoring empty pin current: Ix(x5:vn)
+Ignoring empty pin current: Ix(x5:out)
+Ignoring empty pin current: Ix(x6:inn)
+Ignoring empty pin current: Ix(x6:inp)
+Ignoring empty pin current: Ix(x6:vp)
+Ignoring empty pin current: Ix(x6:vn)
+Ignoring empty pin current: Ix(x6:out)
+Ignoring empty pin current: Ix(x7:inn)
+Ignoring empty pin current: Ix(x7:inp)
+Ignoring empty pin current: Ix(x7:vp)
+Ignoring empty pin current: Ix(x7:vn)
+Ignoring empty pin current: Ix(x7:out)
+Ignoring empty pin current: Ix(x8:inn)
+Ignoring empty pin current: Ix(x8:inp)
+Ignoring empty pin current: Ix(x8:vp)
+Ignoring empty pin current: Ix(x8:vn)
+Ignoring empty pin current: Ix(x8:out)
+Ignoring empty pin current: Ix(x9:inn)
+Ignoring empty pin current: Ix(x9:inp)
+Ignoring empty pin current: Ix(x9:vp)
+Ignoring empty pin current: Ix(x9:vn)
+Ignoring empty pin current: Ix(x9:out)
+Ignoring empty pin current: Ix(x10:inn)
+Ignoring empty pin current: Ix(x10:inp)
+Ignoring empty pin current: Ix(x10:vp)
+Ignoring empty pin current: Ix(x10:vn)
+Ignoring empty pin current: Ix(x10:out)
+Ignoring empty pin current: Ix(x11:inn)
+Ignoring empty pin current: Ix(x11:inp)
+Ignoring empty pin current: Ix(x11:vp)
+Ignoring empty pin current: Ix(x11:vn)
+Ignoring empty pin current: Ix(x11:out)
+Ignoring empty pin current: Ix(x12:inn)
+Ignoring empty pin current: Ix(x12:inp)
+Ignoring empty pin current: Ix(x12:vp)
+Ignoring empty pin current: Ix(x12:vn)
+Ignoring empty pin current: Ix(x12:out)
+Ignoring empty pin current: Ix(x13:inn)
+Ignoring empty pin current: Ix(x13:inp)
+Ignoring empty pin current: Ix(x13:vp)
+Ignoring empty pin current: Ix(x13:vn)
+Ignoring empty pin current: Ix(x13:out)
+Ignoring empty pin current: Ix(x14:inn)
+Ignoring empty pin current: Ix(x14:inp)
+Ignoring empty pin current: Ix(x14:vp)
+Ignoring empty pin current: Ix(x14:vn)
+Ignoring empty pin current: Ix(x14:out)
+Ignoring empty pin current: Ix(x15:inn)
+Ignoring empty pin current: Ix(x15:inp)
+Ignoring empty pin current: Ix(x15:vp)
+Ignoring empty pin current: Ix(x15:vn)
+Ignoring empty pin current: Ix(x15:out)
+
+Date: Mon Sep 26 23:55:47 2022
+Total elapsed time: 0.469 seconds.
+
+tnom = 27
+temp = 27
+method = trap
+totiter = 1833
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
+matrix size = 471
+fillins = 1500
+solver = Normal
+Matrix Compiler1:    6199 opcodes
+Matrix Compiler2: 67.03 KB object code size  5.2/5.0/[2.5]
+
