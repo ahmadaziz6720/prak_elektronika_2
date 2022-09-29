@@ -1,1 +1,1 @@
-# prak_elektronika_2
+# Praktikum Elektronika 2
