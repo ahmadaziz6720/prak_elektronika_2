@@ -1,0 +1,23 @@
+Circuit: * C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\Rangkaian LTSpice\Percobaan 5 Osilator LC\Perc-5-Collpitts.asc
+
+WARNING: Node N002 is floating.
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Tue Nov 15 12:52:54 2022
+Total elapsed time: 0.578 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 234972
+traniter = 234966
+tranpoints = 90923
+accept = 63710
+rejected = 27213
+matrix size = 11
+fillins = 4
+solver = Normal
+Matrix Compiler1: 868 bytes object code size  0.2/0.2/[0.2]
+Matrix Compiler2: off  [0.1]/0.2/0.2
+

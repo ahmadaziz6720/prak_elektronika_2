@@ -1,0 +1,70 @@
+Circuit: * C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\Rangkaian LTSpice\Percobaan 5 Osilator LC\Perc-5-Ring.asc
+
+Direct Newton iteration for .op point succeeded.
+Ignoring empty pin current: Ix(hc04:11)
+Ignoring empty pin current: Ix(hc04:8)
+Ignoring empty pin current: Ix(hc04:2)
+Ignoring empty pin current: Ix(hc04:7)
+Ignoring empty pin current: Ix(x1:in)
+Ignoring empty pin current: Ix(x1:out)
+Ignoring empty pin current: Ix(x1:vp)
+Ignoring empty pin current: Ix(x1:vn)
+Ignoring empty pin current: Ix(x2:in)
+Ignoring empty pin current: Ix(x2:out)
+Ignoring empty pin current: Ix(x2:vp)
+Ignoring empty pin current: Ix(x2:vn)
+Ignoring empty pin current: Ix(x3:in)
+Ignoring empty pin current: Ix(x3:out)
+Ignoring empty pin current: Ix(x3:vp)
+Ignoring empty pin current: Ix(x3:vn)
+Ignoring empty pin current: Ix(x4:in)
+Ignoring empty pin current: Ix(x4:out)
+Ignoring empty pin current: Ix(x4:vp)
+Ignoring empty pin current: Ix(x4:vn)
+Ignoring empty pin current: Ix(x5:in)
+Ignoring empty pin current: Ix(x5:out)
+Ignoring empty pin current: Ix(x5:vp)
+Ignoring empty pin current: Ix(x5:vn)
+Ignoring empty pin current: Ix(hc04:11)
+Ignoring empty pin current: Ix(hc04:8)
+Ignoring empty pin current: Ix(hc04:2)
+Ignoring empty pin current: Ix(hc04:7)
+Ignoring empty pin current: Ix(x1:in)
+Ignoring empty pin current: Ix(x1:out)
+Ignoring empty pin current: Ix(x1:vp)
+Ignoring empty pin current: Ix(x1:vn)
+Ignoring empty pin current: Ix(x2:in)
+Ignoring empty pin current: Ix(x2:out)
+Ignoring empty pin current: Ix(x2:vp)
+Ignoring empty pin current: Ix(x2:vn)
+Ignoring empty pin current: Ix(x3:in)
+Ignoring empty pin current: Ix(x3:out)
+Ignoring empty pin current: Ix(x3:vp)
+Ignoring empty pin current: Ix(x3:vn)
+Ignoring empty pin current: Ix(x4:in)
+Ignoring empty pin current: Ix(x4:out)
+Ignoring empty pin current: Ix(x4:vp)
+Ignoring empty pin current: Ix(x4:vn)
+Ignoring empty pin current: Ix(x5:in)
+Ignoring empty pin current: Ix(x5:out)
+Ignoring empty pin current: Ix(x5:vp)
+Ignoring empty pin current: Ix(x5:vn)
+
+Date: Tue Nov 15 12:56:39 2022
+Total elapsed time: 18.227 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1094520
+traniter = 1094515
+tranpoints = 524495
+accept = 365774
+rejected = 158721
+matrix size = 87
+fillins = 90
+solver = Normal
+Thread vector: 10.4/7.6[3] 8.4/3.8[3] 1.1/0.9[2] 0.6/0.8[1]  2592/500
+Matrix Compiler1: 12.41 KB object code size  4.0/1.8/[1.4]
+Matrix Compiler2: off  [1.9]/2.3/2.2
+

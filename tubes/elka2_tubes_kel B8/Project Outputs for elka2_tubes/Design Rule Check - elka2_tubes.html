@@ -1,0 +1,459 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11/11/2022</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">09.20.05</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc" class="file"><acronym title="C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc">C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">41</td></tr>
+</table>
+</td>
+</table><a name="ID4GCU4HNUL1N2KHUFC0FRY5G31E0UA5CG4VIPVQNSBSL1WCE1ZCBB"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPFU4AQ0BASKJCGHH3NYH3YCDJPP1ZLH3ZF0TNCHNGFOIC0PT5HN">Clearance Constraint (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXXEMINTVASZUK2RBAKJDXG5WSCBWYIPXDW3H0VDKEAJUSYIJ0CPG">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUNSQJWZ2MJOSMWTDTNDVU2KVLBFQ4YJ5TJSJA3PDGDQU13MLSTIC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQMPS4GAMSLJTHO5GTZXC0ZQKSL5GSX2I42UWIGF5QLGS235CZVMF">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDI1ZTETRUBOS3N4JX0TAKQUQ13GZWESNDWG5U0F3Q0RBURVZSKH">Width Constraint (Min=10mil) (Max=30mil) (Preferred=20mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDDHZVMNOFQPEXGKQMJ5EJXQYYFEXFPJJUOJ1H1DR1C4S43IUWJEM">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOU1EQPIB5BEUEY3HR0RXU5QQ2MH0RLCJSPMLJNGBGMPQAYB2EBJE">Hole Size Constraint (Min=1mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJXAEST5BA4GBKBBPIBKI0NTQLOV4HH4LJ1KPVJY5PM0IRBDY1N">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5VMYYRJQBEW4J0T3QF2EC2BWIN3PV0ZLI3IMH5F2BUKVWXOHTEOB">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDYJZS25P1MVMICPNII4E4GMAMLFYFX4TWMP3J4CEY14PZ2JUIMKQJ">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">21</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5WTNW4PTMU5TETR1SHBFBCOVMEMVKYP5BELZMLC1JDW4EN5XMR2B">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">18</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAFE1NGFZUOM3OEWOVW2OQXGS3IVEN50XNMYMOZDUWQP0J3GERNWP">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2OGTS311M1G0H5I2XKP3OTAOUG00HIG0RYGQ4QGY1BPHWBX51MFC">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">41</td>
+</tr>
+</table><br><a name="ID5VMYYRJQBEW4J0T3QF2EC2BWIN3PV0ZLI3IMH5F2BUKVWXOHTEOB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3934.847mil|Location2.X=3946.097mil|Location1.Y=2898.371mil|Location2.Y=2909.621mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3934.847mil|Location2.X=3946.097mil|Location1.Y=2898.371mil|Location2.Y=2909.621mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.717mil &lt; 10mil) Between Pad CP-N(3970mil,2903.996mil) on Multi-Layer And Pad CP-P(3910.944mil,2903.996mil) on Multi-Layer [Top Solder] Mask Sliver [9.717mil] / [Bottom Solder] Mask Sliver [9.717mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4109.847mil|Location2.X=4121.097mil|Location1.Y=2898.371mil|Location2.Y=2909.621mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4109.847mil|Location2.X=4121.097mil|Location1.Y=2898.371mil|Location2.Y=2909.621mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (9.717mil &lt; 10mil) Between Pad CS-N(4145mil,2903.996mil) on Multi-Layer And Pad CS-P(4085.944mil,2903.996mil) on Multi-Layer [Top Solder] Mask Sliver [9.717mil] / [Bottom Solder] Mask Sliver [9.717mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDYJZS25P1MVMICPNII4E4GMAMLFYFX4TWMP3J4CEY14PZ2JUIMKQJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3989.38mil|Location2.X=4000.63mil|Location1.Y=2898.371mil|Location2.Y=2909.621mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3989.38mil|Location2.X=4000.63mil|Location1.Y=2898.371mil|Location2.Y=2909.621mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.652mil &lt; 10mil) Between Arc (4007.205mil,2903.995mil) on Top Overlay And Pad CP-N(3970mil,2903.996mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [8.652mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2829.375mil|Location2.X=2840.625mil|Location1.Y=2910.31mil|Location2.Y=2921.56mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2829.375mil|Location2.X=2840.625mil|Location1.Y=2910.31mil|Location2.Y=2921.56mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.863mil &lt; 10mil) Between Pad D1-1(2835mil,2880mil) on Multi-Layer And Track (2835mil,2924.804mil)(2835mil,3066.024mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.863mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2829.375mil|Location2.X=2840.625mil|Location1.Y=3393.551mil|Location2.Y=3404.801mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2829.375mil|Location2.X=2840.625mil|Location1.Y=3393.551mil|Location2.Y=3404.801mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.847mil &lt; 10mil) Between Pad D1-2(2835mil,3435.118mil) on Multi-Layer And Track (2835mil,3249.094mil)(2835mil,3390.316mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.847mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2689.375mil|Location2.X=2700.625mil|Location1.Y=3393.559mil|Location2.Y=3404.809mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2689.375mil|Location2.X=2700.625mil|Location1.Y=3393.559mil|Location2.Y=3404.809mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.861mil &lt; 10mil) Between Pad D2-1(2695mil,3435.118mil) on Multi-Layer And Track (2695mil,3249.094mil)(2695mil,3390.316mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.861mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2689.375mil|Location2.X=2700.625mil|Location1.Y=2910.318mil|Location2.Y=2921.568mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2689.375mil|Location2.X=2700.625mil|Location1.Y=2910.318mil|Location2.Y=2921.568mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (9.849mil &lt; 10mil) Between Pad D2-2(2695mil,2880mil) on Multi-Layer And Track (2695mil,2924.804mil)(2695mil,3066.024mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [9.849mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3297.558mil|Location2.X=3308.808mil|Location1.Y=2891.733mil|Location2.Y=2902.983mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3297.558mil|Location2.X=3308.808mil|Location1.Y=2891.733mil|Location2.Y=2902.983mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad R1-1(3335mil,2897.358mil) on Multi-Layer And Track (3255mil,2897.358mil)(3295mil,2897.358mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2961.192mil|Location2.X=2972.442mil|Location1.Y=2891.733mil|Location2.Y=2902.983mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2961.192mil|Location2.X=2972.442mil|Location1.Y=2891.733mil|Location2.Y=2902.983mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad R1-2(2935mil,2897.358mil) on Multi-Layer And Track (2975mil,2897.358mil)(3015mil,2897.358mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3777.558mil|Location2.X=3788.808mil|Location1.Y=2854.493mil|Location2.Y=2865.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3777.558mil|Location2.X=3788.808mil|Location1.Y=2854.493mil|Location2.Y=2865.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad R2-1(3815mil,2860.118mil) on Multi-Layer And Track (3735mil,2860.118mil)(3775mil,2860.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3441.192mil|Location2.X=3452.442mil|Location1.Y=2854.493mil|Location2.Y=2865.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3441.192mil|Location2.X=3452.442mil|Location1.Y=2854.493mil|Location2.Y=2865.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad R2-2(3415mil,2860.118mil) on Multi-Layer And Track (3455mil,2860.118mil)(3495mil,2860.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3439.375mil|Location2.X=3450.625mil|Location1.Y=3106.31mil|Location2.Y=3117.56mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3439.375mil|Location2.X=3450.625mil|Location1.Y=3106.31mil|Location2.Y=3117.56mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad R3-1(3445mil,3080.118mil) on Multi-Layer And Track (3445mil,3120.118mil)(3445mil,3160.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3439.375mil|Location2.X=3450.625mil|Location1.Y=3442.676mil|Location2.Y=3453.926mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3439.375mil|Location2.X=3450.625mil|Location1.Y=3442.676mil|Location2.Y=3453.926mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad R3-2(3445mil,3480.118mil) on Multi-Layer And Track (3445mil,3400.118mil)(3445mil,3440.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2971.192mil|Location2.X=2982.442mil|Location1.Y=3412.135mil|Location2.Y=3423.385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2971.192mil|Location2.X=2982.442mil|Location1.Y=3412.135mil|Location2.Y=3423.385mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad R4-1(2945mil,3417.76mil) on Multi-Layer And Track (2985mil,3417.76mil)(3025mil,3417.76mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3307.558mil|Location2.X=3318.808mil|Location1.Y=3412.135mil|Location2.Y=3423.385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3307.558mil|Location2.X=3318.808mil|Location1.Y=3412.135mil|Location2.Y=3423.385mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad R4-2(3345mil,3417.76mil) on Multi-Layer And Track (3265mil,3417.76mil)(3305mil,3417.76mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3804.375mil|Location2.X=3815.625mil|Location1.Y=3106.31mil|Location2.Y=3117.56mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3804.375mil|Location2.X=3815.625mil|Location1.Y=3106.31mil|Location2.Y=3117.56mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad RF-1(3810mil,3080.118mil) on Multi-Layer And Track (3810mil,3120.118mil)(3810mil,3160.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3804.375mil|Location2.X=3815.625mil|Location1.Y=3442.676mil|Location2.Y=3453.926mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3804.375mil|Location2.X=3815.625mil|Location1.Y=3442.676mil|Location2.Y=3453.926mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad RF-2(3810mil,3480.118mil) on Multi-Layer And Track (3810mil,3400.118mil)(3810mil,3440.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.375mil|Location2.X=3570.625mil|Location1.Y=3106.31mil|Location2.Y=3117.56mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.375mil|Location2.X=3570.625mil|Location1.Y=3106.31mil|Location2.Y=3117.56mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad RI-1(3565mil,3080.118mil) on Multi-Layer And Track (3565mil,3120.118mil)(3565mil,3160.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.375mil|Location2.X=3570.625mil|Location1.Y=3442.676mil|Location2.Y=3453.926mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.375mil|Location2.X=3570.625mil|Location1.Y=3442.676mil|Location2.Y=3453.926mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad RI-2(3565mil,3480.118mil) on Multi-Layer And Track (3565mil,3400.118mil)(3565mil,3440.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3777.558mil|Location2.X=3788.808mil|Location1.Y=2969.493mil|Location2.Y=2980.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3777.558mil|Location2.X=3788.808mil|Location1.Y=2969.493mil|Location2.Y=2980.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad RP-1(3815mil,2975.118mil) on Multi-Layer And Track (3735mil,2975.118mil)(3775mil,2975.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3441.192mil|Location2.X=3452.442mil|Location1.Y=2969.493mil|Location2.Y=2980.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3441.192mil|Location2.X=3452.442mil|Location1.Y=2969.493mil|Location2.Y=2980.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad RP-2(3415mil,2975.118mil) on Multi-Layer And Track (3455mil,2975.118mil)(3495mil,2975.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3679.375mil|Location2.X=3690.625mil|Location1.Y=3106.31mil|Location2.Y=3117.56mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3679.375mil|Location2.X=3690.625mil|Location1.Y=3106.31mil|Location2.Y=3117.56mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad RS-1(3685mil,3080.118mil) on Multi-Layer And Track (3685mil,3120.118mil)(3685mil,3160.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3679.375mil|Location2.X=3690.625mil|Location1.Y=3442.676mil|Location2.Y=3453.926mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3679.375mil|Location2.X=3690.625mil|Location1.Y=3442.676mil|Location2.Y=3453.926mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (8.491mil &lt; 10mil) Between Pad RS-2(3685mil,3480.118mil) on Multi-Layer And Track (3685mil,3400.118mil)(3685mil,3440.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [8.491mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID5WTNW4PTMU5TETR1SHBFBCOVMEMVKYP5BELZMLC1JDW4EN5XMR2B"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3928.235mil|Location2.X=3939.485mil|Location1.Y=2815.871mil|Location2.Y=2827.121mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3928.235mil|Location2.X=3939.485mil|Location1.Y=2815.871mil|Location2.Y=2827.121mil|Absolute=True">Silk To Silk Clearance Constraint: (3.05mil &lt; 10mil) Between Arc (3940.472mil,2903.997mil) on Top Overlay And Text "CP" (3908.347mil,2765.008mil) on Top Overlay Silk Text to Silk Clearance [3.05mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4098.631mil|Location2.X=4109.881mil|Location1.Y=2816.098mil|Location2.Y=2827.348mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4098.631mil|Location2.X=4109.881mil|Location1.Y=2816.098mil|Location2.Y=2827.348mil|Absolute=True">Silk To Silk Clearance Constraint: (3.586mil &lt; 10mil) Between Arc (4115.472mil,2903.995mil) on Top Overlay And Text "CS" (4078.347mil,2765.008mil) on Top Overlay Silk Text to Silk Clearance [3.586mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3096.18mil|Location2.X=3103.846mil|Location1.Y=2853.525mil|Location2.Y=2861.191mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3096.18mil|Location2.X=3103.846mil|Location1.Y=2853.525mil|Location2.Y=2861.191mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R1" (3100.013mil,2865.01mil) on Top Overlay And Track (3015mil,2857.358mil)(3255mil,2857.358mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3094.388mil|Location2.X=3105.638mil|Location1.Y=2926.081mil|Location2.Y=2937.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3094.388mil|Location2.X=3105.638mil|Location1.Y=2926.081mil|Location2.Y=2937.331mil|Absolute=True">Silk To Silk Clearance Constraint: (3.431mil &lt; 10mil) Between Text "R1" (3100.013mil,2865.01mil) on Top Overlay And Track (3015mil,2937.358mil)(3255mil,2937.358mil) on Top Overlay Silk Text to Silk Clearance [3.431mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.391mil|Location2.X=3570.641mil|Location1.Y=2818.907mil|Location2.Y=2830.157mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.391mil|Location2.X=3570.641mil|Location1.Y=2818.907mil|Location2.Y=2830.157mil|Absolute=True">Silk To Silk Clearance Constraint: (0.955mil &lt; 10mil) Between Text "R2" (3565.016mil,2830.01mil) on Top Overlay And Track (3495mil,2820.118mil)(3735mil,2820.118mil) on Top Overlay Silk Text to Silk Clearance [0.955mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.391mil|Location2.X=3570.641mil|Location1.Y=2889.961mil|Location2.Y=2901.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.391mil|Location2.X=3570.641mil|Location1.Y=2889.961mil|Location2.Y=2901.211mil|Absolute=True">Silk To Silk Clearance Constraint: (1.191mil &lt; 10mil) Between Text "R2" (3565.016mil,2830.01mil) on Top Overlay And Track (3495mil,2900.118mil)(3735mil,2900.118mil) on Top Overlay Silk Text to Silk Clearance [1.191mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3403.848mil|Location2.X=3415.098mil|Location1.Y=3324.359mil|Location2.Y=3335.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3403.848mil|Location2.X=3415.098mil|Location1.Y=3324.359mil|Location2.Y=3335.609mil|Absolute=True">Silk To Silk Clearance Constraint: (1.073mil &lt; 10mil) Between Text "R3" (3415.01mil,3329.984mil) on Top Overlay And Track (3405mil,3160.118mil)(3405mil,3400.118mil) on Top Overlay Silk Text to Silk Clearance [1.073mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3474.902mil|Location2.X=3486.152mil|Location1.Y=3324.359mil|Location2.Y=3335.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3474.902mil|Location2.X=3486.152mil|Location1.Y=3324.359mil|Location2.Y=3335.609mil|Absolute=True">Silk To Silk Clearance Constraint: (1.073mil &lt; 10mil) Between Text "R3" (3415.01mil,3329.984mil) on Top Overlay And Track (3485mil,3160.118mil)(3485mil,3400.118mil) on Top Overlay Silk Text to Silk Clearance [1.073mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3096.183mil|Location2.X=3103.849mil|Location1.Y=3373.927mil|Location2.Y=3381.593mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3096.183mil|Location2.X=3103.849mil|Location1.Y=3373.927mil|Location2.Y=3381.593mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 10mil) Between Text "R4" (3100.016mil,3385.01mil) on Top Overlay And Track (3025mil,3377.76mil)(3265mil,3377.76mil) on Top Overlay Silk Text to Silk Clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3094.391mil|Location2.X=3105.641mil|Location1.Y=3446.282mil|Location2.Y=3457.532mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3094.391mil|Location2.X=3105.641mil|Location1.Y=3446.282mil|Location2.Y=3457.532mil|Absolute=True">Silk To Silk Clearance Constraint: (3.833mil &lt; 10mil) Between Text "R4" (3100.016mil,3385.01mil) on Top Overlay And Track (3025mil,3457.76mil)(3265mil,3457.76mil) on Top Overlay Silk Text to Silk Clearance [3.833mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3768.848mil|Location2.X=3780.098mil|Location1.Y=3319.359mil|Location2.Y=3330.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3768.848mil|Location2.X=3780.098mil|Location1.Y=3319.359mil|Location2.Y=3330.609mil|Absolute=True">Silk To Silk Clearance Constraint: (1.073mil &lt; 10mil) Between Text "RF" (3780.01mil,3324.984mil) on Top Overlay And Track (3770mil,3160.118mil)(3770mil,3400.118mil) on Top Overlay Silk Text to Silk Clearance [1.073mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3839.902mil|Location2.X=3851.152mil|Location1.Y=3319.359mil|Location2.Y=3330.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3839.902mil|Location2.X=3851.152mil|Location1.Y=3319.359mil|Location2.Y=3330.609mil|Absolute=True">Silk To Silk Clearance Constraint: (1.073mil &lt; 10mil) Between Text "RF" (3780.01mil,3324.984mil) on Top Overlay And Track (3850mil,3160.118mil)(3850mil,3400.118mil) on Top Overlay Silk Text to Silk Clearance [1.073mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3523.848mil|Location2.X=3535.098mil|Location1.Y=3314.362mil|Location2.Y=3325.612mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3523.848mil|Location2.X=3535.098mil|Location1.Y=3314.362mil|Location2.Y=3325.612mil|Absolute=True">Silk To Silk Clearance Constraint: (1.073mil &lt; 10mil) Between Text "RI" (3535.01mil,3319.987mil) on Top Overlay And Track (3525mil,3160.118mil)(3525mil,3400.118mil) on Top Overlay Silk Text to Silk Clearance [1.073mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3594.902mil|Location2.X=3606.152mil|Location1.Y=3314.362mil|Location2.Y=3325.612mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3594.902mil|Location2.X=3606.152mil|Location1.Y=3314.362mil|Location2.Y=3325.612mil|Absolute=True">Silk To Silk Clearance Constraint: (1.073mil &lt; 10mil) Between Text "RI" (3535.01mil,3319.987mil) on Top Overlay And Track (3605mil,3160.118mil)(3605mil,3400.118mil) on Top Overlay Silk Text to Silk Clearance [1.073mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.391mil|Location2.X=3570.641mil|Location1.Y=2933.907mil|Location2.Y=2945.157mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.391mil|Location2.X=3570.641mil|Location1.Y=2933.907mil|Location2.Y=2945.157mil|Absolute=True">Silk To Silk Clearance Constraint: (0.955mil &lt; 10mil) Between Text "RP" (3565.016mil,2945.01mil) on Top Overlay And Track (3495mil,2935.118mil)(3735mil,2935.118mil) on Top Overlay Silk Text to Silk Clearance [0.955mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.391mil|Location2.X=3570.641mil|Location1.Y=3004.961mil|Location2.Y=3016.211mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3559.391mil|Location2.X=3570.641mil|Location1.Y=3004.961mil|Location2.Y=3016.211mil|Absolute=True">Silk To Silk Clearance Constraint: (1.191mil &lt; 10mil) Between Text "RP" (3565.016mil,2945.01mil) on Top Overlay And Track (3495mil,3015.118mil)(3735mil,3015.118mil) on Top Overlay Silk Text to Silk Clearance [1.191mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3643.848mil|Location2.X=3655.098mil|Location1.Y=3324.359mil|Location2.Y=3335.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3643.848mil|Location2.X=3655.098mil|Location1.Y=3324.359mil|Location2.Y=3335.609mil|Absolute=True">Silk To Silk Clearance Constraint: (1.073mil &lt; 10mil) Between Text "RS" (3655.01mil,3329.984mil) on Top Overlay And Track (3645mil,3160.118mil)(3645mil,3400.118mil) on Top Overlay Silk Text to Silk Clearance [1.073mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3714.902mil|Location2.X=3726.152mil|Location1.Y=3324.359mil|Location2.Y=3335.609mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Ahmad Aziz\Data\Kuliah\semester 5\prak_elektronika_2\tubes\elka2_tubes\elka2_tubes.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3714.902mil|Location2.X=3726.152mil|Location1.Y=3324.359mil|Location2.Y=3335.609mil|Absolute=True">Silk To Silk Clearance Constraint: (1.073mil &lt; 10mil) Between Text "RS" (3655.01mil,3329.984mil) on Top Overlay And Track (3725mil,3160.118mil)(3725mil,3400.118mil) on Top Overlay Silk Text to Silk Clearance [1.073mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
